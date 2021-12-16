@@ -14,7 +14,6 @@ char nomeDigitado[50];
 char senhaDigitada[50];
 char c;
 
-struct tm tempo;
 int i=0;
 struct pacientes{
         int identPaciente;
@@ -40,8 +39,8 @@ void telaCadastro(){
     printf("\n\n\n\t ------APERTE QUALQUER TECLA PARA CONTINUAR COM O CADASTRO:-----\n\n");
     system("pause");
     system("cls");
-    printf("\t\t\tCADASTRO DE USU¡RIO\n\n");
-    printf("Digite um nome de usu·rio:");
+    printf("\t\t\tCADASTRO DE USU√ÅRIO\n\n");
+    printf("Digite um nome de usu√°rio:");
     fflush(stdin);
     char nomeDigitado[50];
     char senhaDigitada[50];
@@ -49,48 +48,48 @@ void telaCadastro(){
     int i=0;
     do
     {
-       c=getch();//captura o caractere digitado pelo usu·rio
+       c=getch();//captura o caractere digitado pelo usu√°rio
        if (isalpha(c)!=0 || isalnum(c)!=0)//se for uma letra ou numero
        {
           nomeDigitado[i] = c;//armazena no vetor de caracteres
-          i++;//incrementa o Ìndice do vetor de caracteres
+          i++;//incrementa o √≠ndice do vetor de caracteres
           printf ("%c", c);//exibe o caractere digitado
        }
-       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j· digitados
+       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j√° digitados
        {
-          nomeDigitado[i]='\0';//o Ìndice atual do vetor de caracteres recebe a terminaÁ„o da string
-          i--;//o Ìndice do vetor de caracteres È decrementado
-          printf("\b \b");//o caractere digitado È apagado da tela
+          nomeDigitado[i]='\0';//o √≠ndice atual do vetor de caracteres recebe a termina√ß√£o da string
+          i--;//o √≠ndice do vetor de caracteres √© decrementado
+          printf("\b \b");//o caractere digitado √© apagado da tela
        }
-    }while(c!=13);//o loop vai ser executado atÈ que a tecla pressionada seja o ENTER (cÛdigo 13 na tabela ASCII)
+    }while(c!=13);//o loop vai ser executado at√© que a tecla pressionada seja o ENTER (c√≥digo 13 na tabela ASCII)
 
     nomeDigitado[i]='\0';
     strcpy(nomeUsuario, nomeDigitado);
-    printf("\nSeu nome de usu·rio ser·: %s", nomeUsuario);
+    printf("\nSeu nome de usu√°rio ser√°: %s", nomeUsuario);
     fflush(stdin);
     printf("\nDigite uma senha:");
     fflush(stdin);
     i=0;
     do
     {
-       c=getch();//captura o caractere digitado pelo usu·rio
+       c=getch();//captura o caractere digitado pelo usu√°rio
        if (isalpha(c)!=0 || isalnum(c)!=0)//se for uma letra ou numero
        {
           senhaDigitada[i] = c;//armazena no vetor de caracteres
-          i++;//incrementa o Ìndice do vetor de caracteres
+          i++;//incrementa o √≠ndice do vetor de caracteres
           printf ("%c", c);//exibe o caractere digitado
        }
-       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j· digitados
+       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j√° digitados
        {
-          senhaDigitada[i]='\0';//o Ìndice atual do vetor de caracteres recebe a terminaÁ„o da string
-          i--;//o Ìndice do vetor de caracteres È decrementado
-          printf("\b \b");//o caractere digitado È apagado da tela
+          senhaDigitada[i]='\0';//o √≠ndice atual do vetor de caracteres recebe a termina√ß√£o da string
+          i--;//o √≠ndice do vetor de caracteres √© decrementado
+          printf("\b \b");//o caractere digitado √© apagado da tela
        }
-    }while(c!=13);//o loop vai ser executado atÈ que a tecla pressionada seja o ENTER (cÛdigo 13 na tabela ASCII)
+    }while(c!=13);//o loop vai ser executado at√© que a tecla pressionada seja o ENTER (c√≥digo 13 na tabela ASCII)
 
     senhaDigitada[i]='\0';
     strcpy(senhaUsuario, senhaDigitada);
-    printf("\nSua senha ser·: %s", senhaUsuario);
+    printf("\nSua senha ser√°: %s", senhaUsuario);
     cadastrar(nomeUsuario, senhaUsuario);
 
 
@@ -117,7 +116,7 @@ void cadastrar(char cadastrarNome[50], char cadastrarSenha[50]){
         }
     }
     if(achouNome>0){
-        printf("\n\nERRO:ESTE NOME DE USUARIO J¡ EXISTE. TENTE SE CADASTRAR COM OUTRO NOME.\n");
+        printf("\n\nERRO:ESTE NOME DE USUARIO J√Å EXISTE. TENTE SE CADASTRAR COM OUTRO NOME.\n");
         printf("\nAPERTE QUALQUER TECLA PARA TENTAR SE CADASTRAR NOVAMENTE:");
         system("pause");
         telaCadastro();
@@ -129,7 +128,7 @@ void cadastrar(char cadastrarNome[50], char cadastrarSenha[50]){
         fputs(senhaUsuario, cadastroUser);
         fprintf(cadastroUser, "\n");
         fclose(cadastroUser);
-        printf("\n-----------CADASTRO DE USU¡RIO CONCLUÕDO--------------\n\n");
+        printf("\n-----------CADASTRO DE USU√ÅRIO CONCLU√çDO--------------\n\n");
         system("pause");
         telaLogin();
 
@@ -147,7 +146,7 @@ void listarPacientesRisco(){
 
 
    while(fread(&paciente, sizeof(struct pacientes),1,cadastropacienteRisco)==1){
-        printf("\n\n\n\nPaciente N˙emro: %d", paciente.identPaciente);
+        printf("\n\n\n\nPaciente N√∫emro: %d", paciente.identPaciente);
         printf("\n---------------------------");
         printf("\nNome: %s", paciente.nome);
         printf("\nCPF: %s", paciente.cpf);
@@ -155,10 +154,10 @@ void listarPacientesRisco(){
         printf("\nComorbidade: %s", paciente.comorbidade);
         printf("\nTelefone: %s", paciente.telefone);
         printf("---------------------------");
-        printf("\n\tENDERE«O");
+        printf("\n\tENDERE√áO");
         printf("\nCEP: %s", paciente.cep);
         printf("\nRua: %s", paciente.rua);
-        printf("\nN˙mero da rua: %d", paciente.numeroRua);
+        printf("\nN√∫mero da rua: %d", paciente.numeroRua);
         printf("\nBairro: %s", paciente.bairro);
 
    }
@@ -186,7 +185,7 @@ void listarPacientes(){
 
 
    while(fread(&paciente, sizeof(struct pacientes),1,cadastroPac)==1){
-        printf("\n\n\n\nPaciente N˙emro: %d", paciente.identPaciente);
+        printf("\n\n\n\nPaciente N√∫emro: %d", paciente.identPaciente);
         printf("\n---------------------------");
         printf("\nNome: %s", paciente.nome);
         printf("\nCPF: %s", paciente.cpf);
@@ -194,10 +193,10 @@ void listarPacientes(){
         printf("\nComorbidade: %s", paciente.comorbidade);
         printf("\nTelefone: %s", paciente.telefone);
         printf("---------------------------");
-        printf("\n\tENDERE«O");
+        printf("\n\tENDERE√áO");
         printf("\nCEP: %s", paciente.cep);
         printf("\nRua: %s", paciente.rua);
-        printf("\nN˙mero da rua: %d", paciente.numeroRua);
+        printf("\nN√∫mero da rua: %d", paciente.numeroRua);
         printf("\nBairro: %s", paciente.bairro);
 
    }
@@ -221,20 +220,20 @@ void cadastrarPaciente(){
     system("cls");
     struct pacientes paciente;
     printf("\n\t\tCADASTRO DE PACIENTE\n");
-    printf("\nDIGITE UM N⁄MERO DE IDENTIFICA«√O PARA O PACIENTE NO SISTEMA:");
+    printf("\nDIGITE UM N√öMERO DE IDENTIFICA√á√ÉO PARA O PACIENTE NO SISTEMA:");
     fflush(stdin);
     scanf("%d", &paciente.identPaciente);
     printf("\nDIGITE O NOME DO PACIENTE: ");
     fflush(stdin);
     fgets(paciente.nome,50, stdin);
-    printf("\nDIGITE O ANO DE NASCIMENTO DO PACIENTE(SOMENTE N⁄MEROS): ");
+    printf("\nDIGITE O ANO DE NASCIMENTO DO PACIENTE(SOMENTE N√öMEROS): ");
     fflush(stdin);
     scanf("%d", &paciente.anoNasc);
-    printf("\nDIGITE O CPF DO PACIENTE(COM AS PONTUA«’ES): ");
+    printf("\nDIGITE O CPF DO PACIENTE(COM AS PONTUA√á√ïES): ");
     fflush(stdin);
     fgets(paciente.cpf,15, stdin);
     fflush(stdin);
-    printf("\nDIGITE O TELEFONE OU CELULAR DO PACIENTE(SOMENTE N⁄MEROS): ");
+    printf("\nDIGITE O TELEFONE OU CELULAR DO PACIENTE(SOMENTE N√öMEROS): ");
     fflush(stdin);
     fgets(paciente.telefone,15,stdin);
     fflush(stdin);
@@ -249,14 +248,14 @@ void cadastrarPaciente(){
     }else{
        nComorbidade=0;
     }
-    printf("\n\t\t-----ENDERE«O DO PACIENTE----\n");
+    printf("\n\t\t-----ENDERE√áO DO PACIENTE----\n");
     printf("\nDIGITE O CEP DO PACIENTE:");
     fflush(stdin);
     fgets(paciente.cep,12, stdin);
     printf("\nDIGITE O NOME DA RUA ONDE O PACIENTE MORA: ");
     fflush(stdin);
     fgets(paciente.rua,100, stdin);
-    printf("\nDIGITE O N⁄MERO DA RUA: ");
+    printf("\nDIGITE O N√öMERO DA RUA: ");
     fflush(stdin);
     scanf("%d", &paciente.numeroRua);
     printf("\nDIGITE O BAIRRO: ");
@@ -267,9 +266,9 @@ void cadastrarPaciente(){
         cadastropacienteRisco= fopen("cadastro-pacientes-risco.txt", "ab");
          fwrite(&paciente, sizeof(struct pacientes),1,cadastropacienteRisco);
          printf("\n\t-----CADASTRO DE PACIENTE CONCLUIDO-----");
-         printf("\n\tOBS: ESTE PACIENTE … DO GRUPO DE RISCO-----\n");
+         printf("\n\tOBS: ESTE PACIENTE √â DO GRUPO DE RISCO-----\n");
          fclose(cadastropacienteRisco);
-         printf("\n\t\tAPERTE V PARA VOLTAR AO PAINEL DE USU¡RIO:");
+         printf("\n\t\tAPERTE V PARA VOLTAR AO PAINEL DE USU√ÅRIO:");
          fflush(stdin);
         comandoControle=getch();
         if(comandoControle=='v'){
@@ -280,8 +279,8 @@ void cadastrarPaciente(){
     fwrite(&paciente, sizeof(struct pacientes),1,cadastroPac);
     fclose(cadastroPac);
     printf("\n\t-----CADASTRO DE PACIENTE CONCLUIDO-----\n");
-    printf("\n\tOBS: ESTE PACIENTE N√O FAZ PARTE DO GRUPO DE RISCO\n");
-    printf("\n\tAPERTE V PARA VOLTAR AO PAINEL DE USU¡RIO:");
+    printf("\n\tOBS: ESTE PACIENTE N√ÉO FAZ PARTE DO GRUPO DE RISCO\n");
+    printf("\n\tAPERTE V PARA VOLTAR AO PAINEL DE USU√ÅRIO:");
     fflush(stdin);
     comandoControle=getch();
     if(comandoControle=='v'){
@@ -297,7 +296,7 @@ void cadastrarPaciente(){
 void telaLogado(){
     system("cls");
     printf("\n\t\tSEJA BEM VINDO(A) %s\n", nomeUsuario);
-    printf("\n\n\n VOC  PODE REALIZAR AS SEGUINTES OPERA«’ES:");
+    printf("\n\n\n VOC√ä PODE REALIZAR AS SEGUINTES OPERA√á√ïES:");
     printf("\n\n\tAPERTE C PARA CADASTRAR UM NOVO PACIENTE.");
     printf("\n\n\tAPERTE L PARA VER A LISTA DE TODOS OS PACIENTES.");
     printf("\n\n\tAPERTE R PARA VER A LISTA DE TODOS OS PACIENTES DE RISCO.");
@@ -327,23 +326,23 @@ void telaLogin(){
      printf("\t\t\tENTRAR NO SISTEMA");
      fflush(stdin);
      i=0;
-     printf("\n\ndigite seu nome de usu·rio:");
+     printf("\n\ndigite seu nome de usu√°rio:");
      do
     {
-       c=getch();//captura o caractere digitado pelo usu·rio
+       c=getch();//captura o caractere digitado pelo usu√°rio
        if (isalpha(c)!=0 || isalnum(c)!=0)//se for uma letra
        {
           nomeDigitado[i] = c;//armazena no vetor de caracteres
-          i++;//incrementa o Ìndice do vetor de caracteres
+          i++;//incrementa o √≠ndice do vetor de caracteres
           printf ("%c", c);//exibe o caractere digitado
        }
-       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j· digitados
+       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j√° digitados
        {
-          nomeDigitado[i]='\0';//o Ìndice atual do vetor de caracteres recebe a terminaÁ„o da string
-          i--;//o Ìndice do vetor de caracteres È decrementado
-          printf("\b \b");//o caractere digitado È apagado da tela
+          nomeDigitado[i]='\0';//o √≠ndice atual do vetor de caracteres recebe a termina√ß√£o da string
+          i--;//o √≠ndice do vetor de caracteres √© decrementado
+          printf("\b \b");//o caractere digitado √© apagado da tela
        }
-    }while(c!=13);//o loop vai ser executado atÈ que a tecla pressionada seja o ENTER (cÛdigo 13 na tabela ASCII)
+    }while(c!=13);//o loop vai ser executado at√© que a tecla pressionada seja o ENTER (c√≥digo 13 na tabela ASCII)
 
     nomeDigitado[i]='\0';
     strcpy(nomeUsuario, nomeDigitado);
@@ -353,20 +352,20 @@ void telaLogin(){
     i=0;
     do
     {
-       c=getch();//captura o caractere digitado pelo usu·rio
+       c=getch();//captura o caractere digitado pelo usu√°rio
        if (isalpha(c)!=0 || isalnum(c)!=0)//se for uma letra
        {
           senhaDigitada[i] = c;//armazena no vetor de caracteres
-          i++;//incrementa o Ìndice do vetor de caracteres
+          i++;//incrementa o √≠ndice do vetor de caracteres
           printf ("%c", c);//exibe o caractere digitado
        }
-       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j· digitados
+       else if(c==8&&i)//se for pressionada a tecla BACKSPACE e houver caracteres j√° digitados
        {
-          senhaDigitada[i]='\0';//o Ìndice atual do vetor de caracteres recebe a terminaÁ„o da string
-          i--;//o Ìndice do vetor de caracteres È decrementado
-          printf("\b \b");//o caractere digitado È apagado da tela
+          senhaDigitada[i]='\0';//o √≠ndice atual do vetor de caracteres recebe a termina√ß√£o da string
+          i--;//o √≠ndice do vetor de caracteres √© decrementado
+          printf("\b \b");//o caractere digitado √© apagado da tela
        }
-    }while(c!=13);//o loop vai ser executado atÈ que a tecla pressionada seja o ENTER (cÛdigo 13 na tabela ASCII)
+    }while(c!=13);//o loop vai ser executado at√© que a tecla pressionada seja o ENTER (c√≥digo 13 na tabela ASCII)
 
     senhaDigitada[i]='\0';
     strcpy(senhaUsuario, senhaDigitada);
@@ -402,7 +401,7 @@ void telaLogin(){
 void telaInicial(){
     system("cls");
     printf("Seja bem vindo(a) ao Sistema de cadastro de pacientes com COVID-19.\n\n");
-    printf("Aperte a tecla E para entrar ou C para cadastrar um usu·rio do sistema:\n");
+    printf("Aperte a tecla E para entrar ou C para cadastrar um usu√°rio do sistema:\n");
     comandoControle=getch();
     if(comandoControle== 'c'|| comandoControle=='C'){
         telaCadastro();
